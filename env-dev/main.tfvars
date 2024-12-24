@@ -1,4 +1,7 @@
 env = "dev"
+zone_id        = "Z01735512UFOFLO7B90DS"
+domain_name    = "kndevops72.online"
+
 db_instances= {
 
   mongodb = {
