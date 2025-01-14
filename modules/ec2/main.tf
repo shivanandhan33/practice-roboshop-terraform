@@ -34,10 +34,18 @@ resource "aws_instance" "instance" {
   root_block_device {
     volume_size = var.volume_size
   }
+
+  lifecycle {
+    ignore_changes = [
+      # Ignore any changes coming for AMI
+      ami,
+    ]
+  }
 }
 
   resource null_resource "ansible-pull" {
-# trigger can be used for detatched mode, when to to run 2 individuals servers
+# trigger can be used for detatched mode, when to to run 2 individuals servers. If there is any
+    # change in the Id, null resource can go and rerun
     triggers = {
       instance_id = aws_instance.instance.id
     }
