@@ -4,6 +4,6 @@
   terraform:
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v4 # checking out same repository
+      - uses: actions/checkout@v4 # checking out s
       - run: |
           make dev-apply token=""
